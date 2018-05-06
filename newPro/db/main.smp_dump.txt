@@ -1,0 +1,58 @@
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|pc:U7|state
+Name state.success_st state.add_pc state.wait_sign state.start_pro 
+state.start_pro 0 0 0 0 
+state.wait_sign 0 0 1 1 
+state.add_pc 0 1 0 1 
+state.success_st 1 0 0 1 
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|ram:U6|state
+Name state.success_st state.load_data_st state.load_address_st state.store_data_st state.store_address_st state.start_st 
+state.start_st 0 0 0 0 0 0 
+state.store_address_st 0 0 0 0 1 1 
+state.store_data_st 0 0 0 1 0 1 
+state.load_address_st 0 0 1 0 0 1 
+state.load_data_st 0 1 0 0 0 1 
+state.success_st 1 0 0 0 0 1 
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|select_com:U5|state
+Name state.store_load_st state.adder_st state.start_st 
+state.start_st 0 0 0 
+state.adder_st 0 1 1 
+state.store_load_st 1 0 1 
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|alu:U4|state
+Name state.success_st state.store_load_st state.adder_st state.start_st 
+state.start_st 0 0 0 0 
+state.adder_st 0 0 1 1 
+state.store_load_st 0 1 0 1 
+state.success_st 1 0 0 1 
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|select_1:U3|state
+Name state.store_load_st state.adder_st state.start_st 
+state.start_st 0 0 0 
+state.adder_st 0 1 1 
+state.store_load_st 1 0 1 
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|one_instruction:U2|state
+Name state.success_st state.store_load_st state.adder_st state.wait_st 
+state.wait_st 0 0 0 0 
+state.adder_st 0 0 1 1 
+state.store_load_st 0 1 0 1 
+state.success_st 1 0 0 1 
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|controller:U1|state
+Name state.load_st state.store_st state.adder_st state.wait_st 
+state.wait_st 0 0 0 0 
+state.adder_st 0 0 1 1 
+state.store_st 0 1 0 1 
+state.load_st 1 0 0 1 
+
+State Machine - |IR_ins_selc1_alu_selc2_control_mem_pc|IR:U0|state
+Name state.fetch_data state.buffer_st2 state.buffer_st state.fetch_opcode state.orgnize_data state.wait_pc 
+state.wait_pc 0 0 0 0 0 0 
+state.orgnize_data 0 0 0 0 1 1 
+state.fetch_opcode 0 0 0 1 0 1 
+state.buffer_st 0 0 1 0 0 1 
+state.buffer_st2 0 1 0 0 0 1 
+state.fetch_data 1 0 0 0 0 1 

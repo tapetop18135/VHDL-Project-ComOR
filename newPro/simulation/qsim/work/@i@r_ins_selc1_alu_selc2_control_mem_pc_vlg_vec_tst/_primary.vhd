@@ -1,0 +1,4 @@
+library verilog;
+use verilog.vl_types.all;
+entity IR_ins_selc1_alu_selc2_control_mem_pc_vlg_vec_tst is
+end IR_ins_selc1_alu_selc2_control_mem_pc_vlg_vec_tst;
